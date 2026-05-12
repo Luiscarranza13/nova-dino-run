@@ -39,6 +39,9 @@ target_include_directories(${PROJECT_NAME} PRIVATE src)
 
 if (WIN32)
     target_link_libraries(${PROJECT_NAME} PRIVATE winmm)
+    # Linking estático: el .exe no necesita DLLs externas
+    target_link_options(${PROJECT_NAME} PRIVATE -static-libgcc -static-libstdc++ -static-libgcc)
+    target_link_libraries(${PROJECT_NAME} PRIVATE -static winpthread)
 endif()
 
 # Copiar assets al directorio de build

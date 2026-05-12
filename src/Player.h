@@ -12,7 +12,7 @@ struct DustParticle {
 
 class Player {
 public:
-    static constexpr float GROUND_Y   = 420.0f;
+    static constexpr float GROUND_Y   = 460.0f;
     static constexpr float JUMP_FORCE = -620.0f;
     static constexpr float GRAVITY    = 1500.0f;
     static constexpr float RUN_X      = 90.0f;

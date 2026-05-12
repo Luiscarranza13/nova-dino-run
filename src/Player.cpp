@@ -155,16 +155,16 @@ void Player::Draw() const {
             DrawTexturePro(tex,
                 { 0, 0, tw, th },
                 { x - dw/2 - i*8.0f, drawY, dw, dh },
-                { dw/2, dh/2 }, rotation,
+                { 0, 0 }, 0,
                 { 255, 140, 0, (unsigned char)alpha });
         }
     }
 
-    // Sprite principal
+    // Sprite principal — origin {0,0} para que dest.y sea la esquina superior
     DrawTexturePro(tex,
         { 0, 0, tw, th },
         { x - dw/2, drawY, dw, dh },
-        { dw/2, dh/2 }, rotation,
+        { 0, 0 }, rotation,
         WHITE);
 
     // Escudo

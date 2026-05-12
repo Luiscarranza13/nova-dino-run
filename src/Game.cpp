@@ -233,17 +233,18 @@ void Game::Update(float dt) {
 
 // ── Fondo ────────────────────────────────────────────────────────────────────
 void Game::DrawBackground() const {
-    // Tile del fondo (ciudad nocturna)
     if (texBg.id > 0) {
         float bw = (float)texBg.width;
         float bh = (float)texBg.height;
+        // Escalar para que el fondo llegue exactamente hasta GROUND_Y
+        float scale = GY / bh;
         float x0 = -bgScroll;
         while (x0 < SCREEN_W) {
-            DrawTextureEx(texBg, { x0, 0 }, 0, (float)SCREEN_H / bh, WHITE);
-            x0 += bw * ((float)SCREEN_H / bh);
+            DrawTextureEx(texBg, { x0, 0 }, 0, scale, WHITE);
+            x0 += bw * scale;
         }
     } else {
-        DrawRectangleGradientV(0, 0, SCREEN_W, SCREEN_H,
+        DrawRectangleGradientV(0, 0, SCREEN_W, (int)GY,
             { 8, 12, 35, 255 }, { 18, 28, 65, 255 });
     }
 

@@ -1,0 +1,9 @@
+build/
+raylib-5.0/
+raylib-5.0.zip
+*.dat
+*.o
+*.a
+hiscore.dat
+gen_assets.py
+gen_dino_music.py
